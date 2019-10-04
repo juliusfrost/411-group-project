@@ -1,0 +1,1 @@
+When providing additional information, I will be presented with a large, day-by-day view of the week that has been selected for the event. For each day, I can block off time slots as additional restrictions to my Google calendar. Blocking of time slots is entirely optional. If I choose not to block of any time zones, only my Google Calendar will be considered. 

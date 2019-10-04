@@ -1,0 +1,3 @@
+When the list of restaurants is provided, members of a session will be able to order the five restaurants from 1-5 (1 being their most preferred and 5 being their least preferred). The most preferred restaurant will be chosen. 
+In the case of a draw, the restaurant with the least priority will be eliminated and any votes for that restaurant will be sent to the restaurant that the respective person voted for as their first. If at the end there are only two restaurants and there is a draw, the restaurant that the host chose will have priority and be selected.
+Once a restaurant is selected, Google calendar events will be made for all members, and a reservation to the restaurant (if possible) will be made for the entire party at the time that was selected. 
