@@ -1,0 +1,4 @@
+Suppose I choose to join a session, I will see a pop-up window prompting me to enter the ID of the session I want to join. If I enter a session ID that does not exist or the session has been closed, I will see a note that the ID I entered is not available and to try again. 
+If I join a session through an invitation link sent through email, the session ID will automatically be input and I just have to log in.
+Once I enter a correct session ID, I will be redirected to a page where I will be requested to provide some additional information for myself (refer to providing additional information story)
+Once I am done providing information, I can click a button to go into the session’s page. In the page I will see a table with all members and their location preferences,  restaurant preferences, and a checkbox indicating whether or not they must attend. I will have to wait for the host to close the lobby to proceed (refer to the closing a session story).
