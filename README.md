@@ -11,3 +11,5 @@ Change directory
 
 Run the server  
 `python manage.py runserver`
+
+Visit website at `http://127.0.0.1:8000/`
