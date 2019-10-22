@@ -1,4 +1,6 @@
-# 411 Group Project
+# 411 Group Project: When2Eat
+
+Our app accesses calendar and location data for a group of users and finds restaurants that match time, location, and food preferences.
 
 ## Team Members
 Lab Section: A2  
