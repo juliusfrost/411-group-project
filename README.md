@@ -1,5 +1,11 @@
 # 411-group-project
 
+## Team Members
+[Chris Gil](https://github.com/cgm343)  
+[Frazier Horn](https://github.com/fhorn97)  
+[Julius Frost](https://github.com/juliusfrost/)  
+[Yufan Cao](https://github.com/Yufancao)  
+
 ## Instructions
 
 Create the anaconda environment  
