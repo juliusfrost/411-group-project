@@ -1,7 +1,7 @@
 # 411 Group Project
 
 ## Team Members
-Lab Section: A2
+Lab Section: A2  
 [Chris Gil](https://github.com/cgm343)  
 [Frazier Horn](https://github.com/fhorn97)  
 [Julius Frost](https://github.com/juliusfrost/)  
