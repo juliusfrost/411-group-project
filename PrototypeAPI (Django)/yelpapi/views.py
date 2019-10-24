@@ -34,8 +34,6 @@ def yelpsearch(request):
                   dataList.append({"name":restaurant["name"],
                                    "rating":restaurant["rating"],
                                    "price":restaurant["price"]})
-              else:
-                  print(restaurant)
             table = showData.genTable(request, dataList)
             context = {'table': table}
             return render(request, 'yelpapi/yelpform.html', context)
