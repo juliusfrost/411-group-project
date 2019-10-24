@@ -23,16 +23,21 @@ def yelpform(request):
 
 def yelpsearch(request):
     if request.method == "POST":
-        # try:
+        try:
             city = request.POST.get("city")
-            querystring = {"location": city}
+            querystring = {"location": city, "limit": "50"}
             response = requests.request("GET", url, headers=headers, params=querystring)
             data = json.loads(response.text)
             dataList = []
             for restaurant in data['businesses']:
-              dataList.append({"name":restaurant["name"], "rating":restaurant["rating"]})
+              if 'price' in restaurant:
+                  dataList.append({"name":restaurant["name"],
+                                   "rating":restaurant["rating"],
+                                   "price":restaurant["price"]})
+              else:
+                  print(restaurant)
             table = showData.genTable(request, dataList)
             context = {'table': table}
             return render(request, 'yelpapi/yelpform.html', context)
-        # except:
-        #     return render(request, 'yelpapi/yelpform.html')
+        except:
+            return render(request, 'yelpapi/yelpform.html')

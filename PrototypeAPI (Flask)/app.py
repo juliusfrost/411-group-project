@@ -2,8 +2,10 @@ from flask import Flask, render_template, request
 import json, showData
 import requests
 
+#API Endpoint
 url = "https://api.yelp.com/v3/businesses/search"
 
+#Postman generated headers
 headers = {
     'Authorization': "Bearer -cfARevVogWB6vNqwyLZ7LrnAxyKNxj6T709QFGQSuDY-vxux_UMivRXpni_XQTMW4GxZPU1XNYVZ5fPJnIfUMEIGAXF8IMpEsXlVjLrkpRfGqoR3G56Dp-MRsypXXYx",
     'User-Agent': "PostmanRuntime/7.18.0",
@@ -18,22 +20,30 @@ headers = {
 
 app = Flask(__name__)
 
+#Home page
 @app.route('/')
 def index():
   return render_template("apiproto.html")
 
+#Called on submit button from home page
 @app.route('/yelp', methods=["GET", "POST"])
 def yelp():
   if request.method == "POST":
-    city = request.form["city"]
-    querystring = {"location": city}
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    data = json.loads(response.text)
-    dataList = []
-    for restaurant in data['businesses']:
-      dataList.append({"Name":restaurant["name"], "Rating":restaurant["rating"]})
-    dataTable = showData.DataTable(dataList)
-    return render_template("apiproto.html", yData = dataTable.getHTML())
+      try:
+        city = request.form["city"]
+        querystring = {"location": city, "limit": "50"}
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data = json.loads(response.text)
+        dataList = []
+        for restaurant in data["businesses"]:
+            if "price" in restaurant:
+                dataList.append({"Name":restaurant["name"],
+                                 "Rating":restaurant["rating"],
+                                 "Price":restaurant["price"]})
+        dataTable = showData.DataTable(dataList)
+        return render_template("apiproto.html", table = dataTable.getHTML())
+      except:
+        return render_template("apiproto.html")
 
 if __name__ == '__main__':
   app.debug = True

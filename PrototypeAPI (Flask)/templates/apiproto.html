@@ -15,15 +15,15 @@
         table {
           font-family: arial, sans-serif;
           border-collapse: collapse;
-          width: 100%;
+          width: 75%;
         }
-        
+
         td, th {
           border: 1px solid #dddddd;
           text-align: left;
           padding: 8px;
         }
-        
+
         tr:nth-child(even) {
           background-color: #dddddd;
         }
@@ -32,10 +32,10 @@
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container"><a class="navbar-brand" href="#page-top">when2Eat</a></div>
     </nav>
-    <header class="masthead" style="background-image:url('static/assets/img/header-bg.jpg');">
+    <header class="masthead" style="background-image:url('static/assets/img/header.jpg');">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in"><span>Enter a city to get restaurant information</span></div>
+                <div class="intro-lead-in"><span><font color="black">Enter a city to get restaurant information</font></span></div>
             </div>
         </div>
     </header>
@@ -47,7 +47,7 @@
         <br>
         <input type="submit" id="yelp" name="create" value="Create">
         </form>
-        {{yData | safe}}
+        <div>{{ table | safe }}</div>
       </center>
     </section>
     <footer>

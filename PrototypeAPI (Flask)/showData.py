@@ -6,7 +6,8 @@ class DataTable():
     columns = create_table()
     columns.add_column("Name", Col("Name"))
     columns.add_column("Rating", Col("Rating"))
+    columns.add_column("Price", Col("Price Range"))
     self.table = columns(data)
-    
+
   def getHTML(self):
     return self.table.__html__()
