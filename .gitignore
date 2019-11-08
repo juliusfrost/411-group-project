@@ -8,3 +8,8 @@ __pycache__/
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+
+
+when2eat/
+when2eat/config.py
+db.sqlite3
