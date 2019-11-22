@@ -23,21 +23,44 @@
                         <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Session</a><a class="dropdown-item" role="presentation" href="#">Second Session</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
                     </li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Profile</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Profile Name</a><a class="dropdown-item" role="presentation" href="#">Log out</a><a class="dropdown-item" role="presentation" href="#">Settings</a></div>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Profile Name</a><a class="dropdown-item btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="{% url 'logout' %}">Log out</a><a class="dropdown-item" role="presentation" href="#">Settings</a></div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div>
-        <div class="container" style="padding: 0px;">
-            <div class="row">
-                <div class="col-md-12"><img src={% static "assets/img/abstract-list-is-empty.svg" %} href="#"></div>
-                <div class="col-md-12"><img src={% static "assets/img/abstract-brainstorm.svg" %} href="#"></div>
-            </div>
-        </div>
+      <center>
+        {{ authtest | safe }}
+      </center>
     </div>
-    <div>{{ authtest | safe }}</div>
+    <br>
+    <div>
+      <center>
+        <form action="hostSession" method="post">
+          {% csrf_token %}
+          <button class="btn btn-primary btn-xl text-uppercase" id="hostSession" type="submit">Host</button>
+        </form>
+      </center>
+    </div>
+    <br>
+    <div>
+      <center>
+        <form action="joinSession" method="post">
+          {% csrf_token %}
+            <button class="btn btn-primary btn-xl text-uppercase" id="joinSession" type="submit">Join</button>
+        </form>
+      </center>
+    </div>
+    <br>
+    <div>
+      <center>
+        <form action="getCal" method="post">
+          {% csrf_token %}
+                <button class="btn btn-primary btn-xl text-uppercase" id="getcal" type="submit">Get Calendar Events</button>
+        </form>
+      </center>
+    </div>
     <script src= {% static "assets/js/jquery.min.js" %}></script>
     <script src= {% static "assets/bootstrap/js/bootstrap.min.js" %}></script>
 </body>

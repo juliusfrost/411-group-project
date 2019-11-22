@@ -21,5 +21,5 @@ urlpatterns = [
     path('start/', include('start.urls')),
     path('session/', include('session.urls')),
     path('admin/', admin.site.urls),
-    path('', include('social_django.urls', namespace='social'))
+    path('', include('social_django.urls', namespace='social')),
 ]

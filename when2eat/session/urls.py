@@ -1,10 +1,14 @@
 from django.urls import path
-
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('create/', views.create, name='create'),
-    path('join/', views.join, name='join'),
-    path('join/<int:session_id>', views.join_session, name='join'),
+    path('host/weekselect/', views.weekSelect, name='weekselect'),
+    path('host/weekselect/personal/', views.hostPersonal, name='hostpersonal'),
+    path('host/weekselect/personal/createsession/', views.createSession, name='createsession'),
+    path('join/validatesession/', views.validateSession, name='validatesession'),
+    path('join/validatesession/personal/', views.joinPersonal, name='joinpersonal'),
+    path('join/validatesession/personal/joinsession/', views.joinSession, name='joinsession'),
+    path('sessionpage/<session_id>/', views.sessionPage, name='sessionpage'),
+    path('sessionpage/<session_id>/locksession/', views.lockSession, name='locksession'),
+    path('sessionpage/<session_id>/solvesession/', views.solveSession, name='solvesession'),
 ]
