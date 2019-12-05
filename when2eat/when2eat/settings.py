@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+from .config import SOCIAL_AUTH_GOOGLE_OAUTH2_KEY, SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET,\
+                    GOOGLE_TOKEN_URI, DB_PORT, DB_NAME, DB_HOST, DB_USER, DB_PASSWORD
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -32,12 +35,16 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'start.apps.StartConfig',
+    'session.apps.SessionConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_tables2',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -75,8 +84,14 @@ WSGI_APPLICATION = 'when2eat.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'CS411',
+        # 'HOST': 'localhost',
+        'PORT': DB_PORT,
+        'NAME': DB_NAME,
+        'HOST': DB_HOST,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
     }
 }
 
@@ -99,6 +114,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    # 'social_core.backends.google.GoogleOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY, SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = \
+    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY, SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
+
+TOKEN_URI = GOOGLE_TOKEN_URI
+
+LOGIN_URL = '/auth/login/google-oauth2/'
+LOGIN_REDIRECT_URL = '/start'
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['https://www.googleapis.com/auth/calendar']
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS = {
+    'access_type': 'offline',
+    'approval_prompt': 'auto'
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/

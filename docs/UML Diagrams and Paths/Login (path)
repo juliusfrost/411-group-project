@@ -1,0 +1,20 @@
+Happy Path:
+
+* User chooses to log in with Google
+* The login handler will sent a request to Google for login
+* Google will return a login token
+* The user will be redirected to Google's login page
+* The user sends a login request to Google with their credentials
+* Google authenticates the user
+* The login handler will then find the user in the database and fetch the session id they belong to
+* The user will be redirected to their session's page
+
+Failed authentication:
+
+* Google fails to authenticate the user
+* The user will be redirected to the home screen of the app
+
+User does not belong to a session:
+
+* The login handler fails to find the user in the database, or the user does not have an active session
+* The login handler redirects the user to the selection page where they can choose to host or join a session
