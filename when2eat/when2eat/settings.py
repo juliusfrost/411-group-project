@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
 from .config import SOCIAL_AUTH_GOOGLE_OAUTH2_KEY, SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET,\
-                    GOOGLE_TOKEN_URI, DB_PORT, DB_NAME, DB_HOST, DB_USER, DB_PASSWORD
+                    GOOGLE_TOKEN_URI, DB_PORT, DB_NAME, DB_HOST, DB_USER, DB_PASSWORD,\
+                    YELP_TOKEN
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,7 +29,6 @@ SECRET_KEY = '94nv^g#ut$4d!&$e0y_!*%(urdw2+ah5z5kuh=$7ucf_jp_ix6'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -85,8 +84,6 @@ WSGI_APPLICATION = 'when2eat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'CS411',
-        # 'HOST': 'localhost',
         'PORT': DB_PORT,
         'NAME': DB_NAME,
         'HOST': DB_HOST,
@@ -94,7 +91,6 @@ DATABASES = {
         'PASSWORD': DB_PASSWORD,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -120,10 +116,13 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
+# Tokens and Keys for APIs
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY, SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = \
     SOCIAL_AUTH_GOOGLE_OAUTH2_KEY, SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
 
 TOKEN_URI = GOOGLE_TOKEN_URI
+
+YELP_TOKEN = YELP_TOKEN
 
 LOGIN_URL = '/auth/login/google-oauth2/'
 LOGIN_REDIRECT_URL = '/start'
@@ -140,13 +139,9 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_AUTH_EXTRA_ARGUMENTS = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
 USE_I18N = True
 
 USE_L10N = True
-
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

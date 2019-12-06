@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -40,50 +39,55 @@
                 aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="6-Create%20Session1.html">Create Session</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="modal" href="#myModal">Join session</a>
-                        <div class="modal fade" role="dialog" tabindex="-1" id="myModal" style="opacity: 1;" data-backdrop="false">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Session ID</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                    <div class="modal-body">
-                                        <form class="form-inline"><input class="form-control" type="text"></form>
-                                    </div>
-                                    <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><a class="btn btn-primary" role="button" style="color: rgb(255,255,255);" href="8-Join%20Session1.html">Join Session</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="button"><a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Log Out</a></li>
                 </ul>
             </div>
-            <div class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="width: auto;height: auto;margin: 0px;padding: 15.84px 14.4px;background-color: transparent;font-size: 14.4px;font-family: Montserrat, &quot;Helvetica&quot;;">ACTIVE SESSIONS</a>
-                <div
-                    class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Session</a><a class="dropdown-item" role="presentation" href="#">Second Session</a><a class="dropdown-item" role="presentation" href="#">Third Session</a></div>
-        </div>
-        <div class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="margin: 0px;padding: 15.84px 14.4px;font-size: 14.4px;font-family: Montserrat, sans-serif;">PROFILE</a>
-            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Profile</a><a class="dropdown-item" role="presentation" href="#">Logout</a><a class="dropdown-item" role="presentation" href="#">Settings</a></div>
-        </div>
         </div>
     </nav>
     <header class="masthead" style="background-image: url('assets/img/this-food-looks-really-nice.jpg');background-size: cover;">
         <div class="container">
             <div class="intro-text">
-                <form style="background-color: rgba(255,255,255,0.72);padding: 19px;">
+                <form action="createSession/" method="post" style="background-color: rgba(255,255,255,0.72);padding: 19px;">
                     <h1 style="color: rgb(0,0,0);">Start a Session</h1>
-                    <div class="form-group"><label class="text-black-50 d-lg-flex justify-content-lg-start">Session Name</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label class="text-black-50 d-lg-flex justify-content-lg-start">Start Date</label><input class="form-control" type="date"></div>
-                    <div class="form-group"><label class="text-black-50 d-lg-flex justify-content-lg-start">End Date</label><input class="form-control" type="date"></div>
-                    <div class="form-group"><button class="btn btn-primary d-xl-flex justify-content-xl-start" data-toggle="modal" data-target="#myModal2" type="button">Specific Times</button>
+                    <div class="form-group"><label class="text-black-50 d-lg-flex justify-content-lg-start">Session Name</label><input class="form-control" type="text" id="name" name="name"></div>
+                    <div class="form-group"><label class="text-black-50 d-lg-flex justify-content-lg-start">Start Date</label><input class="form-control" type="date" id="date" name="datee"></div>
+                    <div class="form-group"><label class="text-black-50 d-lg-flex justify-content-lg-start">Location</label><input class="form-control" type="text" id="Location" name="location"></div>
+                    <label class="text-black-50 d-lg-flex justify-content-lg-start">Restaurant Options:</label><br>
+                    <div class="form-group">
+                      <label class="text-black-50 d-lg-flex justify-content-lg-start">Cuisine (optional):</label>
+                      <select class="form-control" id="cuisine" name="cuisine">
+                          <option value="All">No preference</option>
+                          <option value="italian">Italian</option>
+                          <option value="french">French</option>
+                          <option value="chinese">Chinese</option>
+                          <option value="japanese">Japanese</option>
+                          <option value="spanish">Spanish</option>
+                      </select></div>
+                    <div class="form-group">
+                      <label class="text-black-50 d-lg-flex justify-content-lg-start">Food Type (optional):</label>
+                      <select class="form-control" id="foodtype" name="foodtype">
+                        <option value="All">No preference</option>
+                        <option value="seafood">Seafood</option>
+                        <option value="pizza">Pizza</option>
+                        <option value="mediterranean">Mediterranean</option>
+                        <option value="sushi">Sushi</option>
+                        <option value="steak">Steak</option>
+                      </select></div>
+                      <div class="form-group">
+                        <label class="text-black-50 d-lg-flex justify-content-lg-start">Price (optional):</label>
+                        <select class="form-control" id="price" name="price">
+                          <option value="All">No preference</option>
+                          <option value="1">Low</option>
+                          <option value="2">Medium</option>
+                          <option value="3">High</option>
+                        </select></div>
+                    <label class="text-black-50 d-lg-flex justify-content-lg-start">Block Times:</label><br>
+                    <div class="form-group"><button class="btn btn-primary d-xl-flex justify-content-xl-start" data-toggle="modal" data-target="#myModal2" type="button">Block Times</button>
                         <div class="modal" role="dialog" tabindex="-1" id="myModal2" data-backdrop="false">
                             <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Modal Title</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                        <h4 class="modal-title">Times</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                                     <div class="modal-body">
                                         <div class="table-responsive">
                                             <table class="table">
@@ -94,10 +98,6 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>07:00 - 08:00</td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
                                                     <tr>
                                                         <td>08:00 - 09:00</td>
                                                         <td><input type="checkbox"></td>
@@ -159,8 +159,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group"><label class="text-black-50 d-lg-flex justify-content-lg-start">Location</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label class="text-black-50 d-lg-flex justify-content-lg-start">Dietary Restrictions</label><input class="form-control" type="text"></div><a class="btn btn-primary btn-lg" role="button" href="7-session%20page.html">Create Session</a></form>
+                    <a class="btn btn-primary btn-lg" role="button">Create Session</a></form>
             </div>
         </div>
     </header>
