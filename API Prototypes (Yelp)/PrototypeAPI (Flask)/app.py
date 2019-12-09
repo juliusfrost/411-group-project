@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request
 import json, showData
 import requests
+from . import config
 
 #API Endpoint
 url = "https://api.yelp.com/v3/businesses/search"
 
 #Postman generated headers
 headers = {
-    'Authorization': "Bearer -cfARevVogWB6vNqwyLZ7LrnAxyKNxj6T709QFGQSuDY-vxux_UMivRXpni_XQTMW4GxZPU1XNYVZ5fPJnIfUMEIGAXF8IMpEsXlVjLrkpRfGqoR3G56Dp-MRsypXXYx",
+    'Authorization': "Bearer " + config.YELP_KEY,
     'User-Agent': "PostmanRuntime/7.18.0",
     'Accept': "*/*",
     'Cache-Control': "no-cache",

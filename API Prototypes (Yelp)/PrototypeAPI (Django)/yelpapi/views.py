@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . import showData
+from . import showData, config
 import requests, json
 
 url = "https://api.yelp.com/v3/businesses/search"
 
 headers = {
-    'Authorization': "Bearer -cfARevVogWB6vNqwyLZ7LrnAxyKNxj6T709QFGQSuDY-vxux_UMivRXpni_XQTMW4GxZPU1XNYVZ5fPJnIfUMEIGAXF8IMpEsXlVjLrkpRfGqoR3G56Dp-MRsypXXYx",
+    'Authorization': "Bearer " + config.YELP_KEY,
     'User-Agent': "PostmanRuntime/7.18.0",
     'Accept': "*/*",
     'Cache-Control': "no-cache",
