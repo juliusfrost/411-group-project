@@ -373,12 +373,6 @@ def solveSession(request, sessionID):
 
             chosenDay = firstDay + timeDelta
 
-            # while True:
-            #     weekday = firstDay.strftime('%A')
-            #     if weekday == chosenDay:
-            #         break
-            #     firstDay += datetime.timedelta(days=1)
-
             # Get OAuth data for all attending members
             attendingMembers = UserSocialAuth.objects.filter(user_id__in=attendees).values()
 
@@ -395,7 +389,9 @@ def solveSession(request, sessionID):
             # Add the event to all calendars
             makeCalendarEvents(attendingMembers, chosenDay, chosenTime, restaurant)
 
+            # commented out for testing/demo purposes
             # session.delete()
+            # return redirect('/')
             return redirect('/session/sessionPage/'+sessionID)
     return redirect('/')
 

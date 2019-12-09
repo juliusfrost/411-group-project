@@ -1,6 +1,6 @@
 # 411 Group Project: When2Eat
 
-Our app accesses calendar and location data for a group of users and finds restaurants that match time, location, and food preferences.
+Our app accesses calendar data for a group of users and finds restaurants that match time, location, and food preferences for members in a session.
 
 ## Team Members
 Lab Section: A2  
@@ -22,3 +22,5 @@ Run the server
 `python manage.py runserver`
 
 Visit website at `http://127.0.0.1:8000/`
+
+Alternatively, install all dependencies using pip in a virtual environment or on local machine.
