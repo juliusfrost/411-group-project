@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - when2Eat</title>
+    <link rel="stylesheet" href={% static "assets/bootstrap/css/bootstrap.min.css" %}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href={% static "assets/fonts/font-awesome.min.css" %}>
+</head>
+<style>
+  .table-container {
+    width: 60%;
+  }
+</style>
+<body id="page-top">
+  <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+      <div class="container"><a class="navbar-brand" href="#">When2Eat</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse"
+              id="navcol-1">
+              <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="#">Create Session</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="#">Join Session</a></li>
+                  <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Active Sessions&nbsp;</a>
+                      <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Session</a><a class="dropdown-item" role="presentation" href="#">Second Session</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                  </li>
+                  <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Profile</a>
+                      <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Profile Name</a><a class="dropdown-item btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="{% url 'logout' %}">Log out</a><a class="dropdown-item" role="presentation" href="#">Settings</a></div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <header class="masthead" style="background-image:url({% static 'assets/img/header-bg.jpg' %});">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in"><span>Please fill in personal preferences</span></div>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <div>
+      <center>
+        <form action ="" method="post">
+          {% csrf_token %}
+          {{ forms | safe }}
+          <br>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr><th>Time to Block</th><th>Monday</th><th>Tuesday</th>
+                  <th>Wednesday</th><th>Thursday</th><th>Friday</th>
+                  <th>Saturday</th><th>Sunday</th></tr>
+              </thead>
+              <tbody>
+                <tr class="even">
+                <td>08:00-09:00</td>
+                <td><input name="selection" type="checkbox" value="m-0"/></td>
+                <td><input name="selection" type="checkbox" value="t-0"/></td>
+                <td><input name="selection" type="checkbox" value="w-0"/></td>
+                <td><input name="selection" type="checkbox" value="th-0"/></td>
+                <td><input name="selection" type="checkbox" value="f-0"/></td>
+                <td><input name="selection" type="checkbox" value="s-0"/></td>
+                <td><input name="selection" type="checkbox" value="su-0"/></td>
+                </tr>
+                <tr class="even">
+                <td>09:00-10:00</td>
+                <td><input name="selection" type="checkbox" value="m-1"/></td>
+                <td><input name="selection" type="checkbox" value="t-1"/></td>
+                <td><input name="selection" type="checkbox" value="w-1"/></td>
+                <td><input name="selection" type="checkbox" value="th-1"/></td>
+                <td><input name="selection" type="checkbox" value="f-1"/></td>
+                <td><input name="selection" type="checkbox" value="s-1"/></td>
+                <td><input name="selection" type="checkbox" value="su-1"/></td>
+                </tr>
+                <tr class="even">
+                <td>10:00-11:00</td>
+                <td><input name="selection" type="checkbox" value="m-2"/></td>
+                <td><input name="selection" type="checkbox" value="t-2"/></td>
+                <td><input name="selection" type="checkbox" value="w-2"/></td>
+                <td><input name="selection" type="checkbox" value="th-2"/></td>
+                <td><input name="selection" type="checkbox" value="f-2"/></td>
+                <td><input name="selection" type="checkbox" value="s-2"/></td>
+                <td><input name="selection" type="checkbox" value="su-2"/></td>
+                </tr>
+                <tr class="even">
+                <td>11:00-12:00</td>
+                <td><input name="selection" type="checkbox" value="m-3"/></td>
+                <td><input name="selection" type="checkbox" value="t-3"/></td>
+                <td><input name="selection" type="checkbox" value="w-3"/></td>
+                <td><input name="selection" type="checkbox" value="th-3"/></td>
+                <td><input name="selection" type="checkbox" value="f-3"/></td>
+                <td><input name="selection" type="checkbox" value="s-3"/></td>
+                <td><input name="selection" type="checkbox" value="su-3"/></td>
+                </tr>
+                <tr class="even">
+                <td>12:00-13:00</td>
+                <td><input name="selection" type="checkbox" value="m-4"/></td>
+                <td><input name="selection" type="checkbox" value="t-4"/></td>
+                <td><input name="selection" type="checkbox" value="w-4"/></td>
+                <td><input name="selection" type="checkbox" value="th-4"/></td>
+                <td><input name="selection" type="checkbox" value="f-4"/></td>
+                <td><input name="selection" type="checkbox" value="s-4"/></td>
+                <td><input name="selection" type="checkbox" value="su-4"/></td>
+                </tr>
+                <tr class="even">
+                <td>13:00-14:00</td>
+                <td><input name="selection" type="checkbox" value="m-5"/></td>
+                <td><input name="selection" type="checkbox" value="t-5"/></td>
+                <td><input name="selection" type="checkbox" value="w-5"/></td>
+                <td><input name="selection" type="checkbox" value="th-5"/></td>
+                <td><input name="selection" type="checkbox" value="f-5"/></td>
+                <td><input name="selection" type="checkbox" value="s-5"/></td>
+                <td><input name="selection" type="checkbox" value="su-5"/></td>
+                </tr>
+                <tr class="even">
+                <td>14:00-15:00</td>
+                <td><input name="selection" type="checkbox" value="m-6"/></td>
+                <td><input name="selection" type="checkbox" value="t-6"/></td>
+                <td><input name="selection" type="checkbox" value="w-6"/></td>
+                <td><input name="selection" type="checkbox" value="th-6"/></td>
+                <td><input name="selection" type="checkbox" value="f-6"/></td>
+                <td><input name="selection" type="checkbox" value="s-6"/></td>
+                <td><input name="selection" type="checkbox" value="su-6"/></td>
+                </tr>
+                <tr class="even">
+                <td>15:00-16:00</td>
+                <td><input name="selection" type="checkbox" value="m-7"/></td>
+                <td><input name="selection" type="checkbox" value="t-7"/></td>
+                <td><input name="selection" type="checkbox" value="w-7"/></td>
+                <td><input name="selection" type="checkbox" value="th-7"/></td>
+                <td><input name="selection" type="checkbox" value="f-7"/></td>
+                <td><input name="selection" type="checkbox" value="s-7"/></td>
+                <td><input name="selection" type="checkbox" value="su-7"/></td>
+                </tr>
+                <tr class="even">
+                <td>16:00-17:00</td>
+                <td><input name="selection" type="checkbox" value="m-8"/></td>
+                <td><input name="selection" type="checkbox" value="t-8"/></td>
+                <td><input name="selection" type="checkbox" value="w-8"/></td>
+                <td><input name="selection" type="checkbox" value="th-8"/></td>
+                <td><input name="selection" type="checkbox" value="f-8"/></td>
+                <td><input name="selection" type="checkbox" value="s-8"/></td>
+                <td><input name="selection" type="checkbox" value="su-8"/></td>
+                </tr>
+                <tr class="even">
+                <td>17:00-18:00</td>
+                <td><input name="selection" type="checkbox" value="m-9"/></td>
+                <td><input name="selection" type="checkbox" value="t-9"/></td>
+                <td><input name="selection" type="checkbox" value="w-9"/></td>
+                <td><input name="selection" type="checkbox" value="th-9"/></td>
+                <td><input name="selection" type="checkbox" value="f-9"/></td>
+                <td><input name="selection" type="checkbox" value="s-9"/></td>
+                <td><input name="selection" type="checkbox" value="su-9"/></td>
+                </tr>
+                <tr class="even">
+                <td>18:00-19:00</td>
+                <td><input name="selection" type="checkbox" value="m-10"/></td>
+                <td><input name="selection" type="checkbox" value="t-10"/></td>
+                <td><input name="selection" type="checkbox" value="w-10"/></td>
+                <td><input name="selection" type="checkbox" value="th-10"/></td>
+                <td><input name="selection" type="checkbox" value="f-10"/></td>
+                <td><input name="selection" type="checkbox" value="s-10"/></td>
+                <td><input name="selection" type="checkbox" value="su-10"/></td>
+                </tr>
+                <tr class="even">
+                <td>19:00-20:00</td>
+                <td><input name="selection" type="checkbox" value="m-11"/></td>
+                <td><input name="selection" type="checkbox" value="t-11"/></td>
+                <td><input name="selection" type="checkbox" value="w-11"/></td>
+                <td><input name="selection" type="checkbox" value="th-11"/></td>
+                <td><input name="selection" type="checkbox" value="f-11"/></td>
+                <td><input name="selection" type="checkbox" value="s-11"/></td>
+                <td><input name="selection" type="checkbox" value="su-11"/></td>
+                </tr>
+                <tr class="even">
+                <td>20:00-21:00</td>
+                <td><input name="selection" type="checkbox" value="m-12"/></td>
+                <td><input name="selection" type="checkbox" value="t-12"/></td>
+                <td><input name="selection" type="checkbox" value="w-12"/></td>
+                <td><input name="selection" type="checkbox" value="th-12"/></td>
+                <td><input name="selection" type="checkbox" value="f-12"/></td>
+                <td><input name="selection" type="checkbox" value="s-12"/></td>
+                <td><input name="selection" type="checkbox" value="su-12"/></td>
+                </tr>
+                <tr class="even">
+                <td>21:00-22:00</td>
+                <td><input name="selection" type="checkbox" value="m-13"/></td>
+                <td><input name="selection" type="checkbox" value="t-13"/></td>
+                <td><input name="selection" type="checkbox" value="w-13"/></td>
+                <td><input name="selection" type="checkbox" value="th-13"/></td>
+                <td><input name="selection" type="checkbox" value="f-13"/></td>
+                <td><input name="selection" type="checkbox" value="s-13"/></td>
+                <td><input name="selection" type="checkbox" value="su-13"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br>
+          {{ button | safe }}
+        </form>
+      </center>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© when2Eat 2018</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src={% static "assets/js/jquery.min.js" %}></script>
+    <script src={% static "assets/bootstrap/js/bootstrap.min.js" %}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src={% static "assets/js/agency.js" %}></script>
+</body>
+
+</html>
