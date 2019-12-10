@@ -15,6 +15,10 @@ Create the anaconda environment
 `conda env create -f environment.yml`  
 `conda activate cs411`
 
+Create `config.py`:  
+Get `config.py` from one of our group members  
+Save in `/when2eat/when2eat/config.py`
+
 Change directory  
 `cd when2eat`
 
