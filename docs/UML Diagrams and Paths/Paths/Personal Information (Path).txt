@@ -1,0 +1,11 @@
+Happy path:
+
+* User fills in the optional fields for cuisine, food type, and price.
+* A preferences will be combined and turned into JSON format for storage
+* User's profile will be updated to match these preferences
+
+What could go wrong:
+
+* User profile does not exist yet in the database
+    * Check the database to make sure it doesnt exist.
+    * Create the new profile and set it with the new information
