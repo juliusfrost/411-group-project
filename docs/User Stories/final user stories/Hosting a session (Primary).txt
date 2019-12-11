@@ -1,6 +1,0 @@
-Suppose I choose to host a session, I will be redirected to a different page where I will need to select a week for the event.
-On this page I will see a calendar for the current month (and next month in the event that a week will overlap the two months). I can click on the days of the calendar to select one.
-In the next section I will be requested to provide some additional information for myself (refer to providing additional information story).
-Once I am done providing information, I can click a button to create the session, which will make the session’s page and redirect me to it.
-The session page will display a unique session id and the week the session will take place. I can share this id with other people, which they can use to join my session. 
-The session page will also display all members in a table and a checkbox indicating whether or not they must attend. Once I think there are enough people I can close the session. (refer to the closing a session story).
