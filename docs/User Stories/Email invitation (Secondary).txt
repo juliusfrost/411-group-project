@@ -1,3 +1,0 @@
-From the session page, as a host, I can click a button to bring up a window where I can input a set of emails and click send. 
-The email will contain a link that leads to the joining a session portion of the app, but will have the session ID already filled in. The invitee will simply need to authenticate through google to reach the session page.
-If I provide an invalid email, the web app will simply not send an invitation to that email address. 

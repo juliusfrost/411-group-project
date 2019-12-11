@@ -1,4 +1,0 @@
-When creating or joining a session, I will need to provide some information about myself.
-First, I need to provide my location preference (refer to location preference user story). 
-Second, I can select some dietary/restaurant options (refer to the restaurant filtering story)
-Third, I can provide some more calendar restrictions (refer to custom calendar restriction story)

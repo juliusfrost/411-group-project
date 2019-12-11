@@ -1,1 +1,0 @@
-When providing additional information, I will be presented with several drop down menus that I can use to set my restaurant preferences. I can choose a cuisine type, a price range, and dietary restrictions (gluten-free, etc). Setting restaurant preferences is entirely optional and I can choose not to fill any of the options. 

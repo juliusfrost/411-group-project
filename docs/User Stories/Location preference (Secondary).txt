@@ -1,4 +1,0 @@
-When providing additional information, I will be presented with four options for location and must choose exactly one of these. The options I can choose from are: current location, specific location, location of event in calendar prior to time chosen by web app, or location of event in calendar following the time chosen by the web app. 
-If I choose to provide a specific location, I will be shown a text field where I can type the location I want. The text field will autocomplete to only allow legal addresses. (google maps api)
-If I do not provide any location preference, the web app will default to current location.
-If I choose to provide my current location (or it was defaulted) and it cannot be determined, the web app will default my choice to location of event in calendar prior to time chosen.
