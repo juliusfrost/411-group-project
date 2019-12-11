@@ -1,0 +1,15 @@
+Happy path:
+
+* A pop up form will be shown to the user
+* The form will have 1-hour time blocks from 8 am to 10 pm that the user can select
+* For each selected time block, every day of the session's week will be marked as
+  unavailable for the user (at that time)
+* This blocked availability will be combined with the user's Google Calendar restrictions
+* Combined restrictions turned into JSON and stored into user profile
+* Selecting these time blocks is entirely optional
+
+What could go wrong:
+
+* User profile does not exist yet in the database
+    * Check the database to make sure it doesnt exist.
+    * Create the new profile and set it with the new information

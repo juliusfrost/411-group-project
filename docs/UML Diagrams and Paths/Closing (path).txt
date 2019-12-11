@@ -1,0 +1,32 @@
+Happy Path:
+
+* User locks the session preventing new members from joining.
+* User chooses who must attend by ticking their checkboxes
+* User can then click to close the session
+* The session will fetch all members that belong to that session from the database
+* A common time (of at least 1 hour) will be found for the members.
+    * Priority will be given to those marked as must attend
+    * Then, other members will be added until no more will work
+* Most common preferences will be found for chosen members
+* A call to the Yelp API will be made to get a restaurant at the location that is open
+  at the chosen time, and matches the preferences. 
+* The restaurant's name and location will be returned.
+* For each chosen member, a call to the Google Calendar API will be made to create
+  a new event at the chosen time with the name and location of the restaurant
+* The session will then be deleted from the database (automatically setting users' active
+  session to null by cascading) and user will be redirected to home page.
+
+
+What could go wrong:
+
+* No common time could be found
+    * Redirect back to session page where host can change the must attend list
+    * Unless every members does not have a 1 hour long available time, a common time
+      can always be found, even if it is just for 1 member. 
+
+* No restaurant could be found
+    * If no restaurant can be found, redirect back to session page where host
+      can reselect must attend memebrs again. 
+
+* User OAuth token is expired and cannot make call to calendar API
+    * Check if token is expired, and refresh it using the user's refresh token
