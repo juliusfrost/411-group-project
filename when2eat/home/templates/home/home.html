@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>When2Eat - Home</title>
+  <link rel="stylesheet" href={% static "assets/bootstrap/css/bootstrap.min.css" %}>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+  <link rel="stylesheet" href={% static "assets/fonts/fontawesome-all.min.css" %}>
+  <link rel="stylesheet" href={% static "assets/fonts/font-awesome.min.css" %}>
+  <link rel="stylesheet" href={% static "assets/fonts/material-icons.min.css" %}>
+  <link rel="stylesheet" href={% static "assets/fonts/fontawesome5-overrides.min.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/alltablecomponent.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-BS4-1.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-BS4.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-1.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-10.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-2.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-3.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-4.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-5.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-6.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-7.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-8.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-9.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/card-toplocatoin.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Community-ChatComments.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/untitled.css" %}>
+</head>
+<style>
+  .navbar, .header {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<body id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="/">When2Eat</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse text-right" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto text-uppercase">
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'social:begin' 'google-oauth2' %}">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url({% static 'assets/img/this-food-looks-really-nice.jpg' %});">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in"></div>
+                <div class="intro-heading text-uppercase"><span class="bg-secondary shadow-lg">when2eat</span></div><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="{% url 'social:begin' 'google-oauth2' %}">Start Now</a></div>
+        </div>
+    </header>
+    <section id="team" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src={% static "assets/img/julius.jpg" %}>
+                        <h4>Julius</h4>
+                        <br>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src={% static "assets/img/yufan.jpg" %}>
+                        <h4>Yufan</h4>
+                        <br>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src={% static "assets/img/chris.jpg" %}>
+                        <h4>Chris</h4>
+                        <br>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member"><img class="rounded-circle mx-auto" src={% static "assets/img/frazier.jpg" %}>
+                        <h4>Frazier</h4>
+                        <br>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© When2Eat 2019</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src={% static "assets/js/jquery.min.js" %}></script>
+    <script src={% static "assets/bootstrap/js/bootstrap.min.js" %}></script>
+    <script src={% static "assets/js/agency.js" %}></script>
+    <script src={% static "assets/js/alltablecomponent.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-1.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-10.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-11.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-12.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-13.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-14.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-2.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-3.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-4.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-5.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-6.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-7.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-8.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-9.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode.js" %}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+</body>
+</html>

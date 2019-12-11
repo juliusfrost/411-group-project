@@ -11,9 +11,16 @@ Lab Section: A2
 
 ## Instructions
 
+Clone repository  
+`git clone https://github.com/juliusfrost/411-group-project.git`
+
 Create the anaconda environment  
 `conda env create -f environment.yml`  
 `conda activate cs411`
+
+Set the config file:  
+Get `config.py` from one of our group members  
+Save in `/when2eat/when2eat/config.py`
 
 Change directory  
 `cd when2eat`

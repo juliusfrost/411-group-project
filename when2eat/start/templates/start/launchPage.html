@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>When2Eat - Start</title>
+  <link rel="stylesheet" href={% static "assets/bootstrap/css/bootstrap.min.css" %}>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+  <link rel="stylesheet" href={% static "assets/fonts/fontawesome-all.min.css" %}>
+  <link rel="stylesheet" href={% static "assets/fonts/font-awesome.min.css" %}>
+  <link rel="stylesheet" href={% static "assets/fonts/material-icons.min.css" %}>
+  <link rel="stylesheet" href={% static "assets/fonts/fontawesome5-overrides.min.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/alltablecomponent.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-BS4-1.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-BS4.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-1.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-10.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-2.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-3.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-4.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-5.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-6.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-7.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-8.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-9.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Calendar-JavaScript-Can-only-see-in-browser-preview-mode.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/card-toplocatoin.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/Community-ChatComments.css" %}>
+  <link rel="stylesheet" href={% static "assets/css/untitled.css" %}>
+</head>
+<style>
+  .navbar, .header {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<body id="page-top" onload="showJoin()">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="/">When2Eat</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto text-uppercase">
+                    <li class="nav-item" role="button"><a class="nav-link js-scroll-trigger" href='/session/host/hostForms'>Create Session</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="modal" href="#myModal" id="join">Join session</a>
+                        <div class="modal fade" role="dialog" tabindex="-1" id="myModal" style="opacity: 1;" data-backdrop="false">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Session ID</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                    <div class="modal-body">
+                                        {% if messages %}
+                                        {% for message in messages %}
+                                        <font color='red'>{{ message }}</font>
+                                        {% endfor %}
+                                        {% endif %}
+                                        <form class="form-inline" method="post" action="/session/join/validateSessionID/">
+                                          {% csrf_token %}
+                                          <input class="form-control" type="text" id="sessionID" name="sessionID">
+                                          <button class="btn btn-primary" type="submit" style="color: rgb(255,255,255);">Join Session</button>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <a class="btn btn-default" role="button" data-dismiss="modal">Close</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item" role="button"><a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Log Out</a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <input type='hidden' value='{{ invalidID }}' id='myVar' />
+    <script type="text/javascript">
+      function showJoin() {
+        var invalidID = $('#myVar').val()
+        if (invalidID === "true") {
+          $("#join").click();
+        }
+      }
+    </script>
+    <header class="masthead" style="background-image: url({% static 'assets/img/this-food-looks-really-nice.jpg' %});background-size: cover;">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in"><span>Welcome To Our When2Eat!</span></div>
+                <div class="intro-heading text-uppercase"><span>It's Nice To Meet You</span></div>
+            </div>
+        </div>
+    </header>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© When2Eat 2019</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src={% static "assets/js/jquery.min.js" %}></script>
+    <script src={% static "assets/bootstrap/js/bootstrap.min.js" %}></script>
+    <script src={% static "assets/js/agency.js" %}></script>
+    <script src={% static "assets/js/alltablecomponent.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-1.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-10.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-11.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-12.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-13.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-14.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-2.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-3.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-4.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-5.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-6.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-7.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-8.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode-9.js" %}></script>
+    <script src={% static "assets/js/Calendar-JavaScript-Can-only-see-in-browser-preview-mode.js" %}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+</body>
+</html>
